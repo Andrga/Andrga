@@ -1167,6 +1167,7 @@ strong {
 }
 
 @media screen and (max-width: 575px) {
+
   .navbar .container {
     margin-right: 12px;
     margin-left: 12px;
@@ -1184,7 +1185,12 @@ strong {
 
   .hero h2 {
     top: 100px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    padding: 12px 18px;
+    max-width: 85%;
+    word-spacing: 0.05em;
   }
 
   .hero-image-wrap {
@@ -1222,6 +1228,13 @@ strong {
 
   h5 {
     font-size: 20px;
+  }
+  .hero h2 {
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    padding: 10px 16px;
+    max-width: 80%;
   }
 
   .navbar-brand,
