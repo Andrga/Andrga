@@ -1166,6 +1166,56 @@ strong {
   }
 }
 
+@media screen and (max-width: 768px) {
+
+  /* Tarjetas de proyectos */
+  .projects-thumb.card-hover-active {
+    border-color: var(--secondary-color);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+
+  .projects-thumb.card-hover-active .projects-image {
+    transform: rotate(0) translateY(0);
+  }
+
+  /* Tarjetas de skills */
+  .services-thumb.card-hover-active {
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+
+  .services-thumb.card-hover-active .services-icon-wrap {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white-color);
+  }
+  .services-thumb {
+    padding: 15px 15px 35px 15px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .services-thumb h5 {
+    font-size: 15px;
+    margin-bottom: 8px !important;
+  }
+
+  .services-thumb p {
+    font-size: 12px !important;
+  }
+
+  .services-icon {
+    top: 2px !important;
+    right: -50px !important;
+    font-size: 45px;
+  }
+
+  .services-icon-wrap {
+    width: 50%;
+    height: 45%;
+  }
+
+}
+
 @media screen and (max-width: 575px) {
 
   .navbar .container {
@@ -1229,6 +1279,7 @@ strong {
   h5 {
     font-size: 20px;
   }
+
   .hero h2 {
     font-size: 16px;
     line-height: 1.6;

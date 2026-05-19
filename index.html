@@ -193,7 +193,8 @@ https://templatemo.com/tm-578-first-portfolio
 
                     <div class="col-lg-10 col-12 mx-auto">
                         <div class="section-title-wrap d-flex justify-content-center align-items-center mb-5">
-                             <i class="bi bi-tools" style="font-size: 75px; margin-right: 10px; display: inline-block;"></i>
+                            <i class="bi bi-tools"
+                                style="font-size: 75px; margin-right: 10px; display: inline-block;"></i>
                             <h2 class="text-white ms-4 mb-0">Skills</h2>
                         </div>
                         <div class="row pt-lg-5">
@@ -278,7 +279,8 @@ https://templatemo.com/tm-578-first-portfolio
 
                     <div class="col-lg-10 col-12 mx-auto">
                         <div class="section-title-wrap d-flex justify-content-center align-items-center mb-4">
-                             <i class="bi bi-collection" style="font-size: 75px; margin-right: 10px; display: inline-block;"></i>
+                            <i class="bi bi-collection"
+                                style="font-size: 75px; margin-right: 10px; display: inline-block;"></i>
                             <h2 class="text-white ms-4 mb-0">Projects</h2>
                         </div>
                     </div>
@@ -415,7 +417,8 @@ https://templatemo.com/tm-578-first-portfolio
 
                     <div class="col-lg-10 col-12 mx-auto">
                         <div class="section-title-wrap d-flex justify-content-center align-items-center mb-5">
-                            <i class="bi bi-chat-dots" style="font-size: 75px; margin-right: 10px; display: inline-block;"></i>
+                            <i class="bi bi-chat-dots"
+                                style="font-size: 75px; margin-right: 10px; display: inline-block;"></i>
                             <h2 class="text-white ms-4 mb-0">Say Hi!</h2>
                         </div>
                     </div>
@@ -572,7 +575,50 @@ https://templatemo.com/tm-578-first-portfolio
             });
         </script>
     </main>
+    <!-- ACTIVATE HOVER ON SCROLL (Mobile) -->
+    <script>
+        // Detectar si es movil
+        const isMobile = window.innerWidth <= 768;
 
+        if (isMobile) {
+            const cards = document.querySelectorAll('.projects-thumb, .services-thumb');
+
+            // Funcion para verificar si la tarjeta esta en el centro
+            function isCardInCenter(element) {
+                const rect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // zona central
+                const centerTop = windowHeight * 0.45;
+                const centerBottom = windowHeight * 0.55;
+
+                // Verificar si alguna parte de la tarjeta esta en la zona central
+                const cardTop = rect.top;
+                const cardBottom = rect.bottom;
+
+                // Retorna true si la tarjeta se superpone con la zona central
+                return !(cardBottom < centerTop || cardTop > centerBottom);
+            }
+
+            // Funcion para actualizar estado de todas las tarjetas
+            function updateCardsOnScroll() {
+                cards.forEach(card => {
+                    if (isCardInCenter(card)) {
+                        card.classList.add('card-hover-active');
+                    } else {
+                        card.classList.remove('card-hover-active');
+                    }
+                });
+            }
+
+            // Ejecutar al hacer scroll
+            window.addEventListener('scroll', updateCardsOnScroll, { passive: true });
+
+            // Ejecutar al cargar la pagina
+            updateCardsOnScroll();
+        }
+
+    </script>
     <footer class="site-footer">
         <div class="container">
             <div class="row">
